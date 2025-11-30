@@ -3,204 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ma Galerie Anime</title>
+  <title>Ma Collection Anime</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-    body {
-      margin: 0;
-      padding: 0;
-      background: #0d0d1a;
-      color: #eee;
-      font-family: 'Poppins', sans-serif;
+    body { margin:0; background:#0d0d1a; color:#eee; font-family:'Poppins',sans-serif; }
+    header { text-align:center; padding:50px 20px; background:linear-gradient(135deg,#1e1e3d,#2a1e3d); }
+    h1 { margin:0; font-size:3em; color:#00d4ff; }
+    .count { color:#aaa; margin-top:10px; }
+    .gallery { 
+      display:grid; 
+      grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); 
+      gap:30px; padding:40px; max-width:1600px; margin:0 auto;
     }
-    header {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(135deg, #1e1e3d, #2a1e3d);
+    .card { 
+      background:#1a1a2e; border-radius:16px; overflow:hidden; cursor:pointer;
+      transition:0.3s; position:relative;
     }
-    h1 { margin: 0; font-size: 3em; color: #00d4ff; }
-    .count { color: #aaa; font-size: 1.2em; margin-top: 10px; }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 25px;
-      padding: 40px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .card {
-      background: #1a1a2e;
-      border-radius: 16px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-    }
-    .card img {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-    }
-    .info {
-      padding: 18px;
-    }
-    .title {
-      font-size: 1.4em;
-      margin: 0 0 8px;
-      color: #00d4ff;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .original {
-      font-size: 0.9em;
-      color: #999;
-      margin-bottom: 10px;
-    }
-    .meta {
-      font-size: 0.9em;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 10px 0;
-    }
-    .tag {
-      background: #16213e;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 0.8em;
-    }
-    .note {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: rgba(0,0,0,0.7);
-      color: #ffd700;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-weight: bold;
-      font-size: 1.1em;
-    }
-    .status {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background: #ff2e63;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 0.8em;
-      font-weight: bold;
-    }
-    .loading {
-      text-align: center;
-      padding: 100px;
-      font-size: 1.5em;
-      color: #555;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #666;
-      font-size: 0.9em;
-    }
+    .card:hover { transform:scale(1.05); box-shadow:0 20px 40px rgba(0,212,255,0.3); }
+    .card img { width:100%; height:400px; object-fit:cover; }
+    .info { padding:16px; }
+    .title { font-size:1.35em; margin:0 0 8px; color:#00d4ff; }
+    .meta { display:flex; flex-wrap:wrap; gap:8px; font-size:0.85em; }
+    .tag { background:#16213e; padding:4px 10px; border-radius:20px; }
+    .note { position:absolute; top:10px; right:10px; background:rgba(0,0,0,0.7); color:#ffd700; padding:6px 12px; border-radius:20px; font-weight:bold; }
+    .status { position:absolute; top:10px; left:10px; background:#ff2e63; padding:4px 10px; border-radius:20px; font-size:0.8em; }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Ma Collection Anime</h1>
-    <div class="count">Chargement des animes...</div>
+    <div class="count">Chargement...</div>
   </header>
 
-  <div class="gallery" id="gallery">
-    <div class="loading">Recherche des fichiers anime-*.json en cours...</div>
-  </div>
-
-  <footer>
-    Galerie générée automatiquement • Ajoute simplement un fichier anime-xxx.json dans le dossier !
-  </footer>
+  <div class="gallery" id="gallery"></div>
 
   <script>
-    // Liste des fichiers à charger (on va chercher tous les anime-*.json)
-    // Tu peux aussi les lister manuellement si tu préfères
-    const possibleFiles = [
-      "anime-onepiece.json",
-      "anime-aot.json",
-      "anime-demon-slayer.json",
-      "anime-fmab.json",
-      "anime-deathnote.json",
-      "anime-naruto.json",
-      "anime-bleach.json",
-      "anime-jujutsukaisen.json",
-      "anime-chainsawman.json",
-      "anime-spyxfamily.json"
-      // Ajoute ici d'autres noms si tu veux
+    const files = [
+      "anime-onepiece.json","anime-aot.json","anime-fmab.json","anime-demon-slayer.json",
+      "anime-deathnote.json","anime-naruto.json","anime-jujutsukaisen.json","anime-chainsawman.json"
     ];
 
     const gallery = document.getElementById('gallery');
     const countEl = document.querySelector('.count');
-    let loadedCount = 0;
-    let totalFound = 0;
 
-    async function loadAnime(file) {
-      try {
-        const res = await fetch(file);
-        if (!res.ok) return null;
-        return await res.json();
-      } catch (e) {
-        return null;
-      }
-    }
-
-    // Chargement en parallèle de tous les fichiers
-    Promise.all(possibleFiles.map(loadAnime))
+    Promise.all(files.map(f => fetch(f).then(r => r.ok ? r.json() : null).catch(()=>null)))
       .then(animes => {
-        const validAnimes = animes.filter(a => a !== null);
-        totalFound = validAnimes.length;
-        loadedCount = totalFound;
+        const valid = animes.filter(Boolean);
+        countEl.textContent = `${valid.length} anime${valid.length>1?'s':''} dans la collection`;
 
-        // Tri par note décroissante (optionnel)
-        validAnimes.sort((a, b) => (b.note_personnelle || b.note_moyenne || 0) - (a.note_personnelle || a.note_moyenne || 0));
+        valid.sort((a,b) => (b.note_personnelle||b.note_moyenne||0) - (a.note_personnelle||a.note_moyenne||0));
 
-        if (totalFound === 0) {
-          gallery.innerHTML = `<div class="loading">Aucun fichier anime-*.json trouvé dans ce dossier.</div>`;
-          countEl.textContent = "0 anime";
-          return;
-        }
-
-        countEl.textContent = `${totalFound} anime${totalFound > 1 ? 's' : ''} dans la collection`;
-
-        gallery.innerHTML = validAnimes.map(a => `
-          <div class="card">
-            ${a.note_personnelle || a.note_moyenne ? `<div class="note">★ ${a.note_personnelle || a.note_moyenne}</div>` : ''}
-            ${a.statut === "En cours" ? `<div class="status">EN COURS</div>` : ''}
-            
+        gallery.innerHTML = valid.map(a => `
+          <div class="card" onclick="openDetail('${a.id || a.titre.toLowerCase().replace(/[^a-z0-9]/g,'-')}.json')">
+            ${a.note_personnelle||a.note_moyenne ? `<div class="note">★ ${a.note_personnelle||a.note_moyenne}</div>` : ''}
+            ${a.statut==="En cours" ? `<div class="status">EN COURS</div>` : ''}
             <img src="${a.images?.affiche || a.images?.miniature || 'https://via.placeholder.com/300x420/1a1a2e/00d4ff?text=No+Image'}" 
                  alt="${a.titre}" loading="lazy">
-            
             <div class="info">
-              <div class="title">${a.titre} ${a.favori ? '❤️' : ''}</div>
-              ${a.titre_original ? `<div class="original">${a.titre_original}</div>` : ''}
-              
+              <div class="title">${a.titre} ${a.favori?'❤️':''}</div>
               <div class="meta">
-                <span class="tag">${a.annee_diffusion || '?'}</span>
-                <span class="tag">${a.nb_episodes || '?'} ép.</span>
-                <span class="tag">${a.studio || 'Studio ?'}</span>
-              </div>
-              
-              <div class="meta">
-                ${a.genres ? a.genres.slice(0, 4).map(g => `<span class="tag">${g}</span>`).join('') : ''}
-                ${a.genres && a.genres.length > 4 ? `<span class="tag">…</span>` : ''}
+                <span class="tag">${a.annee_diffusion||'?'}</span>
+                <span class="tag">${a.nb_episodes||'?'}${(a.nb_episodes?' ép.':'')}</span>
+                ${a.genres?.slice(0,3).map(g=>`<span class="tag">${g}</span>`).join('')||''}
               </div>
             </div>
           </div>
         `).join('');
       });
+
+    function openDetail(filename) {
+      window.location.href = `detail.html?anime=${filename}`;
+    }
   </script>
 </body>
 </html>
