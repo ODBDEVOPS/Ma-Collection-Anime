@@ -1,0 +1,126 @@
+{
+"id": "dr-stone",
+"titre": "Dr. STONE",
+"titre_original": "Dr.STONE",
+"titre_alternatif": [],
+"type": "Série TV",
+"statut": "En cours",
+"annee_diffusion": 2019,
+"saison_premiere": "Été 2019",
+"nb_episodes": 82,
+"episodes_vus": null,
+"duree_episode_min": 24,
+"studio": "TMS Entertainment",
+"source": "Manga",
+"auteur_original": "Riichiro Inagaki & Boichi",
+"genres": [
+"Aventure",
+"Science-fiction",
+"Comédie"
+],
+"themes": [
+"Science",
+"Survie",
+"Post-apocalyptique",
+"Amitié"
+],
+"note_moyenne": 8.2,
+"note_personnelle": 9,
+"date_debut_visionnage": null,
+"date_fin_visionnage": null,
+"format_vue": [
+"VOSTFR"
+],
+"plateformes": [
+{
+"nom": "Crunchyroll",
+"lien": "https://www.crunchyroll.com/series/GYEXQKJG6/dr-stone",
+"disponible": true
+},
+{
+"nom": "Netflix",
+"lien": null,
+"disponible": false
+}
+],
+"synopsis": "Un jour, un mystérieux flash de lumière pétrifie l’humanité entière, transformant chaque être humain en statue de pierre. Des milliers d’années plus tard, le lycéen surdoué Senku Ishigami se réveille dans un monde où la civilisation s’est entièrement effondrée et où la nature a repris ses droits. Armé d’un esprit scientifique brillant et d’une détermination inébranlable, il décide de reconstruire la société depuis l’âge de pierre jusqu’à l’ère moderne en s’appuyant uniquement sur la science. Rapidement rejoint par son ami d’enfance Taiju, une force de la nature au grand cœur, et d’autres survivants, Senku fonde le « Royaume de la Science » pour redonner aux humains le confort perdu : électricité, médicaments, métaux, moteurs, et bien plus encore. Mais leur rêve de renaissance se heurte à Tsukasa Shishio, un combattant surpuissant qui souhaite rebâtir un monde pur en ne réveillant que les jeunes et en éliminant l’ancienne génération. S’engage alors une véritable guerre d’idéologies et de progrès, où chaque invention, du plus simple savon au smartphone, devient une arme décisive. Dr. STONE propose une aventure captivante, pleine d’humour et de découvertes, où chaque épisode met à l’honneur l’ingéniosité humaine et le plaisir d’apprendre.",
+"opening": [
+{
+"numero": 1,
+"titre": "Good Morning World!",
+"artiste": "BURNOUT SYNDROMES",
+"episodes": "1-24"
+},
+{
+"numero": 2,
+"titre": "Rakuen",
+"artiste": "Fujifabric",
+"episodes": "25-35"
+}
+],
+"ending": [
+{
+"numero": 1,
+"titre": "LIFE",
+"artiste": "Rude-α",
+"episodes": "1-24"
+},
+{
+"numero": 2,
+"titre": "Yume no Youna",
+"artiste": "Yusuke Saeki",
+"episodes": "25-35"
+}
+],
+"personnages_principaux": [
+{
+"nom": "Senku Ishigami",
+"seiyuu": "Yuusuke Kobayashi",
+"role": "Protagoniste, génie de la science",
+"image": "https://cdn.myanimelist.net/images/characters/7/389827.jpg"
+},
+{
+"nom": "Taiju Oki",
+"seiyuu": "Makoto Furukawa",
+"role": "Ami d’enfance de Senku",
+"image": "https://cdn.myanimelist.net/images/characters/13/389829.jpg"
+},
+{
+"nom": "Yuzuriha Ogawa",
+"seiyuu": "Kana Ichinose",
+"role": "Amie d’enfance, soutien logistique",
+"image": "https://cdn.myanimelist.net/images/characters/4/389828.jpg"
+},
+{
+"nom": "Tsukasa Shishio",
+"seiyuu": "Yuichi Nakamura",
+"role": "Antagoniste principal (arc Stone Wars)",
+"image": "https://cdn.myanimelist.net/images/characters/5/389830.jpg"
+},
+{
+"nom": "Chrome",
+"seiyuu": "Gen Satou",
+"role": "Sorcière de village devenu scientifique",
+"image": "https://cdn.myanimelist.net/images/characters/3/393455.jpg"
+}
+],
+"images": {
+"affiche": "https://cdn.myanimelist.net/images/anime/1613/102576.jpg",
+"banner": "https://cdn.myanimelist.net/images/anime/1613/102576l.jpg",
+"miniature": "https://cdn.myanimelist.net/images/anime/1613/102576t.jpg"
+},
+"liens": {
+"myanimelist": "https://myanimelist.net/anime/38691",
+"anilist": "https://anilist.co/anime/105333",
+"ann": "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=22063"
+},
+"tags_personnels": [
+"science",
+"survie",
+"post-apo",
+"shonen intelligent",
+"humour"
+],
+"favori": true,
+"rewatch": 1
+}
