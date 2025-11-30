@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime - Détail</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+    body { margin:0; background:#0f0f1a; color:#e0e0e0; font-family:'Roboto',sans-serif; }
+    .container { max-width:1000px; margin:40px auto; padding:20px; }
+    .card { background:#1a1a2e; border-radius:20px; overflow:hidden; box-shadow:0 15px 40px rgba(0,0,0,0.6); }
+    .banner { height:400px; background-size:cover; background-position:center; position:relative; }
+    .banner::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, transparent 40%, #0f0f1a); }
+    .poster { position:absolute; bottom:-100px; left:40px; width:220px; border:6px solid #1a1a2e; border-radius:12px; box-shadow:0 15px 30px rgba(0,0,0,0.8); }
+    .info { padding:120px 40px 40px; }
+    h1 { margin:0 0 10px; font-size:3em; color:#00d4ff; }
+    .original { font-size:1.5em; color:#aaa; margin-bottom:20px; }
+    .meta { display:flex; flex-wrap:wrap; gap:15px; margin:20px 0; font-size:1.1em; }
+    .meta span { background:#16213e; padding:8px 16px; border-radius:10px; }
+    .genres { display:flex; flex-wrap:wrap; gap:10px; margin:25px 0; }
+    .genre { background:#00d4ff; color:black; padding:6px 16px; border-radius:30px; font-weight:bold; }
+    .note { font-size:4em; color:#ffd700; font-weight:bold; text-align:center; margin:30px 0; }
+    .synopsis { background:#16213e; padding:25px; border-radius:12px; line-height:1.8; margin:30px 0; }
+    .section { margin:50px 0; }
+    h2 { color:#00d4ff; border-bottom:2px solid #00d4ff; padding-bottom:10px; }
+    table { width:100%; border-collapse:collapse; margin:15px 0; }
+    th, td { padding:12px; border-bottom:1px solid #333; text-align:left; }
+    th { background:#16213e; color:#00d4ff; }
+    .back { display:inline-block; margin:20px 0; color:#00d4ff; text-decoration:none; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back">← Retour à la galerie</a>
+    <div class="card" id="anime-detail">
+      <div style="text-align:center; padding:100px; color:#aaa;">
+        <h1>Chargement de l'anime...</h1>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const file = params.get('anime') || 'anime-onepiece.json';
+
+    fetch(file)
+      .then(r => r.ok ? r.json() : Promise.reject('Fichier non trouvé'))
+      .then(a => {
+        const el = document.getElementById('anime-detail');
+
+        const genres = a.genres?.map(g => `<span class="genre">${g}</span>`).join('') || '';
+        const opHTML = (a.opening||[]).map(op => `<tr><td>OP ${op.numero}</td><td>${op.titre}</td><td>${op.artiste}</td><td>${op.episodes}</td></tr>`).join('') || '<tr><td colspan="4">Aucun</td></tr>';
+        const edHTML = (a.ending||[]).map(ed => `<tr><td>ED ${ed.numero}</td><td>${ed.titre}</td><td>${ed.artiste}</td><td>${ed.episodes}</td></tr>`).join('') || '<tr><td colspan="4">Aucun</td></tr>';
+
+        const persos = (a.personnages_principaux||[]).map(p => 
+          `<li><strong>${p.nom}</strong> ${p.seiyuu?`(CV: ${p.seiyuu})`:''} – ${p.role}</li>`
+        ).join('') || '<li>Aucun personnage listé</li>';
+
+        el.innerHTML = `
+          <div class="banner" style="background-image:url('${a.images?.banner || a.images?.affiche || ''}')">
+            ${a.images?.affiche ? `<img class="poster" src="${a.images.affiche}" alt="${a.titre}">` : ''}
+          </div>
+          <div class="info">
+            <h1>${a.titre} ${a.favori?'❤️':''}</h1>
+            ${a.titre_original ? `<div class="original">${a.titre_original}</div>` : ''}
+            
+            <div class="meta">
+              <span>${a.type||'Série TV'} • ${a.statut||'?'}</span>
+              <span>${a.annee_diffusion||'?'} ${a.saison_premiere?'• '+a.saison_premiere:''}</span>
+              <span>${a.nb_episodes||'?'}${a.nb_episodes?' épisodes':''} × ${a.duree_episode_min||24} min</span>
+              <span>Studio : ${a.studio||'?'}</span>
+            </div>
+
+            <div class="genres">${genres}</div>
+            <div class="note">★ ${a.note_personnelle || a.note_moyenne || '?'} / 10</div>
+
+            <div class="synopsis">
+              <h2>Synopsis</h2>
+              <p>${a.synopsis || 'Aucun synopsis disponible.'}</p>
+            </div>
+
+            ${a.opening || a.ending ? `
+            <div class="section">
+              <h2>Musiques</h2>
+              ${a.opening?'<h3>Openings</h3><table><tr><th>#</th><th>Titre</th><th>Artiste</th><th>Épisodes</th></tr>'+opHTML+'</table>':''}
+              ${a.ending?'<h3>Endings</h3><table><tr><th>#</th><th>Titre</th><th>Artiste</th><th>Épisodes</th></tr>'+edHTML+'</table>':''}
+            </div>` : ''}
+
+            <div class="section">
+              <h2>Personnages principaux</h2>
+              <ul>${persos}</ul>
+            </div>
+
+            ${a.tags_personnels ? `<p><strong>Tags :</strong> ${a.tags_personnels.join(' • ')}</p>` : ''}
+            ${a.rewatch ? `<p>Revu ${a.rewatch} fois</p>` : ''}
+          </div>
+        `;
+      })
+      .catch(err => {
+        document.getElementById('anime-detail').innerHTML = 
+          `<div style="padding:100px; text-align:center; color:#ff6b6b;">
+            <h2>Impossible de charger l'anime</h2>
+            <p>${err}</p>
+            <p>Fichier attendu : <strong>${file}</strong></p>
+          </div>`;
+      });
+  </script>
+</body>
+</html>
