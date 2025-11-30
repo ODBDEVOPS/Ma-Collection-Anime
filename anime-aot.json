@@ -1,0 +1,14 @@
+{
+  "titre": "Attack on Titan",
+  "titre_original": "進撃の巨人",
+  "annee_diffusion": 2013,
+  "nb_episodes": 94,
+  "statut": "Terminé",
+  "studio": "MAPPA / Wit Studio",
+  "genres": ["Action", "Drame", "Fantasy", "Mystère"],
+  "note_personnelle": 9.8,
+  "favori": true,
+  "images": {
+    "affiche": "https://www.nautiljon.com/images/anime/00/50/shingeki_no_kyojin_105.jpg"
+  }
+}
