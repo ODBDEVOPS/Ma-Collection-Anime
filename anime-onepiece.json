@@ -1,0 +1,90 @@
+{
+  "id": "one-piece",
+  "titre": "One Piece",
+  "titre_original": "ワンピース",
+  "titre_alternatif": ["OP", "Sea of Survival"],
+  "type": "Série TV",
+  "statut": "En cours",
+  "annee_diffusion": 1999,
+  "saison_premiere": "Automne 1999",
+  "nb_episodes": 1120,
+  "episodes_vus": 1120,
+  "duree_episode_min": 24,
+  "studio": "Toei Animation",
+  "source": "Manga",
+  "auteur_original": "Eiichiro Oda",
+  "genres": ["Action", "Aventure", "Comédie", "Drame", "Fantasy", "Shōnen"],
+  "themes": ["Pirates", "Amitié", "Liberté", "Rêves", "Trésor"],
+  "note_moyenne": 9.2,
+  "note_personnelle": 10,
+  "date_debut_visionnage": "2015-03-10",
+  "date_fin_visionnage": null,
+  "format_vue": ["VF", "VOSTFR"],
+  "plateformes": [
+    {
+      "nom": "Crunchyroll",
+      "lien": "https://www.crunchyroll.com/fr/series/GY24XJQYR",
+      "disponible": true
+    },
+    {
+      "nom": "Netflix",
+      "lien": "https://www.netflix.com/title/80107103",
+      "disponible": true,
+      "saisons": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    },
+    {
+      "nom": "ADN",
+      "lien": null,
+      "disponible": false
+    }
+  ],
+  "synopsis": "Il y a 22 ans, le Roi des Pirates Gol D. Roger annonça avant son exécution qu’il avait caché le One Piece quelque part dans le monde. Depuis, les pirates du monde entier ont pris la mer pour le trouver. Luffy, un jeune garçon au chapeau de paille, rêve de devenir le nouveau Roi des Pirates !",
+  "opening": [
+    {
+      "numero": 1,
+      "titre": "We Are!",
+      "artiste": "Hiroshi Kitadani",
+      "episodes": "1-47"
+    },
+    {
+      "numero": 26,
+      "titre": "Paint",
+      "artiste": "I Don’t Like Mondays.",
+      "episodes": "1115-?"
+    }
+  ],
+  "ending": [
+    {
+      "numero": 1,
+      "titre": "Memories",
+      "artiste": "Maki Otsuki",
+      "episodes": "1-30"
+    }
+  ],
+  "personnages_principaux": [
+    {
+      "nom": "Monkey D. Luffy",
+      "seiyuu": "Mayumi Tanaka",
+      "role": "Protagoniste",
+      "image": "https://example.com/luffy.jpg"
+    },
+    {
+      "nom": "Roronoa Zoro",
+      "seiyuu": "Kazuya Nakai",
+      "role": "Épéiste de l'équipage"
+    }
+  ],
+  "images": {
+    "affiche": "https://www.nautiljon.com/images/anime/00/09/one_piece_190.jpg",
+    "banner": "https://example.com/banner_onepiece.jpg",
+    "miniature": "https://example.com/thumbnail_op.jpg"
+  },
+  "liens": {
+    "myanimelist": "https://myanimelist.net/anime/21",
+    "anilist": "https://anilist.co/anime/21",
+    "ann": "https://www.anime-planet.com/anime/one-piece"
+  },
+  "tags_personnels": ["Favori absolu", "Relecture régulière", "Équipage au complet", "Arc Wano chef-d'œuvre"],
+  "favori": true,
+  "rewatch": 3
+}
