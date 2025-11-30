@@ -1,0 +1,128 @@
+{
+"id": "solo-leveling",
+"titre": "Solo Leveling",
+"titre_original": "Ore dake Level Up na Ken",
+"titre_alternatif": [
+"I Only Level Up"
+],
+"type": "Série TV",
+"statut": "En cours",
+"annee_diffusion": 2024,
+"saison_premiere": "Hiver 2024",
+"nb_episodes": 12,
+"episodes_vus": null,
+"duree_episode_min": 24,
+"studio": "A-1 Pictures",
+"source": "Web novel",
+"auteur_original": "Chugong",
+"genres": [
+"Action",
+"Fantasy",
+"Aventure"
+],
+"themes": [
+"Jeu vidéo",
+"Chasseurs",
+"Monstres",
+"Dungeons"
+],
+"note_moyenne": 8.5,
+"note_personnelle": 9,
+"date_debut_visionnage": null,
+"date_fin_visionnage": null,
+"format_vue": [
+"VOSTFR"
+],
+"plateformes": [
+{
+"nom": "Crunchyroll",
+"lien": "https://www.crunchyroll.com/solo-leveling",
+"disponible": true
+},
+{
+"nom": "Netflix",
+"lien": null,
+"disponible": false
+}
+],
+"synopsis": "Dans un monde où des portails reliant la Terre à des dimensions remplies de monstres apparaissent soudainement, certains humains éveillent des pouvoirs surnaturels et deviennent des chasseurs chargés d’explorer ces donjons et de protéger l’humanité. Parmi eux se trouve Sung Jin-Woo, tristement célèbre comme le « chasseur le plus faible de l’humanité », un rang E si fragile qu’il frôle la mort à chaque mission et ne participe que pour subvenir aux besoins de sa famille. Lors d’un raid qui tourne au cauchemar, son groupe tombe sur un double donjon et se retrouve piégé dans un temple meurtrier régi par des règles incompréhensibles. Jin-Woo, gravement blessé, est abandonné face à une mort certaine. Pourtant, au moment critique, une mystérieuse interface semblable à un écran de jeu vidéo apparaît devant lui et lui propose une seconde chance. Devenu l’unique « joueur » dans ce monde, il obtient la capacité unique d’augmenter sans limite ses statistiques en accomplissant des quêtes, en s’entraînant et en vainquant des ennemis de plus en plus puissants. En progressant, Jin-Woo passe de boulet de son équipe à prédateur absolu des donjons, tout en levant peu à peu le voile sur l’origine des portails, de ce système énigmatique et des forces cosmiques qui s’affrontent dans l’ombre.",
+"opening": [
+{
+"numero": 1,
+"titre": "LEveL",
+"artiste": "Hiroyuki Sawano feat. TOMORROW X TOGETHER",
+"episodes": "1-12"
+},
+{
+"numero": 2,
+"titre": "4evel",
+"artiste": "SawanoHiroyuki[nZk]:ReN",
+"episodes": "13-?"
+}
+],
+"ending": [
+{
+"numero": 1,
+"titre": "request",
+"artiste": "krage",
+"episodes": "1-12"
+},
+{
+"numero": 2,
+"titre": "SOME TIME",
+"artiste": "LiSA",
+"episodes": "13-?"
+}
+],
+"personnages_principaux": [
+{
+"nom": "Sung Jin-Woo",
+"seiyuu": "Taito Ban",
+"role": "Protagoniste",
+"image": "https://cdn.myanimelist.net/images/characters/11/519297.jpg"
+},
+{
+"nom": "Cha Hae-In",
+"seiyuu": "Reina Ueda",
+"role": "Chasseuse S-Rank",
+"image": "https://cdn.myanimelist.net/images/characters/2/519298.jpg"
+},
+{
+"nom": "Yoo Jin-Ho",
+"seiyuu": "Genta Nakamura",
+"role": "Chasseur, ami de Jin-Woo",
+"image": "https://cdn.myanimelist.net/images/characters/4/519299.jpg"
+},
+{
+"nom": "Go Gun-Hee",
+"seiyuu": "Banjou Ginga",
+"role": "Président de l’Association des Chasseurs",
+"image": "https://cdn.myanimelist.net/images/characters/8/519300.jpg"
+},
+{
+"nom": "Song Chi-Yul",
+"seiyuu": "Daisuke Hirakawa",
+"role": "Chasseur expérimenté",
+"image": "https://cdn.myanimelist.net/images/characters/10/519301.jpg"
+}
+],
+"images": {
+"affiche": "https://cdn.myanimelist.net/images/anime/1392/138292.jpg",
+"banner": "https://cdn.myanimelist.net/images/anime/1392/138292l.jpg",
+"miniature": "https://cdn.myanimelist.net/images/anime/1392/138292t.jpg"
+},
+"liens": {
+"myanimelist": "https://myanimelist.net/anime/52299",
+"anilist": "https://anilist.co/anime/151807",
+"ann": "https://www.animenewsnetwork.com/encyclopedia/anime.php?id=26152"
+},
+"tags_personnels": [
+"power-up",
+"MC pété",
+"dark fantasy",
+"monstres",
+"adaptation manhwa"
+],
+"favori": true,
+"rewatch": 1
+}
